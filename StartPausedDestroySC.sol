@@ -17,4 +17,8 @@ contract Owner {
         require(msg.sender == owner, "Vous n'avez pas les droits d'acces sur ce contrat");
         nombre = _nombre;
     }
+
+    function getNombre() public view returns(uint) {
+        return nombre;
+    }
 }
