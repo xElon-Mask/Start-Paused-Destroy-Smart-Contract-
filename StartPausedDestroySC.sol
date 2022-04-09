@@ -29,4 +29,9 @@ contract Owner {
         require(!paused, "Le contrat est en pause");
         return nombre;
     }
+
+    function destroy(address payable _to) public {
+        require(msg.sender == owner, "Vous n'avez pas les droits d'acces sur ce contrat");
+        selfdestruct(_to);
+    }
 }
